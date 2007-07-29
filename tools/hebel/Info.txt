@@ -1,0 +1,20 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tool Info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#|  Name:       Hebel Berechung                                           |#
+#|  Autor:      Christoph Heer (Christoph.Heer@googlemail.com)            |#
+#|  Version:    0.1                                                       |#
+#|  Datum:      29.07.2007                                                |#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Dieses Programm ist fuer die Berechnung vom Hebelgesetz.
+Dabei wir die PhysikPy Class verwendet die auf Voraussetzung
+ist um die Berechung durch zu fuehren.
+Als Optionen koennen angegeben werden:
+  --version : Gibt die Versionsnummer aus
+  
+  --hilfe   : Gibt diese Hilfe aus
+  
+  --c       : Nach Angabe dieser Option einfach F1 l1 F2 l2 angeben
+              eine muss aber ein ? um zu vermittel das diese Ausgerechnet
+              werden soll
+              
+              Beispiel: python hebel.py --c 5 2 5 ?
