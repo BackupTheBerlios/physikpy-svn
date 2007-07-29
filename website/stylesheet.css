@@ -4,28 +4,45 @@
   padding: 0;
 }
 
+body
+{
+  background-image: url('images/background.png');
+  background-repeat: repeat-x;
+  background-color: black;
+}
+
 #container
 {
+  background-color: black;
   margin: auto;
-  width: 600px;
+  width: 700px;
+  height: 100%;
 }
 
 #banner
 {
   background-color: red;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 #ticker
 {
   background-color: green;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 #content
 {
   background-color: yellow;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 #ihv
 {
   background-color: gray;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
