@@ -1,0 +1,31 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+#container
+{
+  margin: auto;
+  width: 600px;
+}
+
+#banner
+{
+  background-color: red;
+}
+
+#ticker
+{
+  background-color: green;
+}
+
+#content
+{
+  background-color: yellow;
+}
+
+#ihv
+{
+  background-color: gray;
+}
