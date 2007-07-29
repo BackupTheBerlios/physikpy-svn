@@ -6,6 +6,7 @@
 
 body
 {
+  font: 1em 'Bitstream Vera Sans';
   background-image: url('images/background.png');
   background-repeat: repeat-x;
   background-color: black;
@@ -13,36 +14,30 @@ body
 
 #container
 {
-  background-color: black;
+  background-image: url('images/background_content.png');
   margin: auto;
   width: 700px;
-  height: 100%;
+  height: auto;
+  border-left: 2px solid #073947;
+  border-right: 2px solid #073947;
+  border-bottom: 2px solid #073947;
 }
 
 #banner
 {
-  background-color: red;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
-
-#ticker
-{
-  background-color: green;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  font-size: 4em;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 #content
 {
-  background-color: yellow;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  margin: 10px;
 }
 
 #ihv
 {
-  background-color: gray;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 2px solid #073947;
+  border-bottom: 2px solid #073947;
+  padding-left: 10px;
 }
