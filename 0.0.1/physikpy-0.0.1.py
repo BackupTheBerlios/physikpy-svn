@@ -1,95 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-   <title>BerliOS Download - The Open Source Mediator</title>
-<link rel="stylesheet" href="/berlios.css" type="text/css">
-</head>
-<body>
+#!/usr/bin/python
 
-<!-- top strip -->
-<table BORDER=0 CELLSPACING=0 CELLPADDING=2 WIDTH="100%" BGCOLOR="#7B7B7B" >
-<tr>
-<td><span class=maintitlebar>&nbsp; 
-<b><a href="http://www.berlios.de/index.php.en" class="maintitlebar">Home</a></b> |
-<b><a href="http://developer.berlios.de/about.php" class="maintitlebar">About us</a></b> |
-<b><a href="http://developer.berlios.de/partners.php" class="maintitlebar">Partners</a></b> |
-<b><a href="http://developer.berlios.de/contact.php" class="maintitlebar">Contact</a></b></span></td>
-</tr>
-</table>
-<!-- end top strip -->
+# Name:			PhysikPy Modull
+# Beschreibung:		Ein Modull mit Funktionen zum Berechnen von Physikalischen Gesetzen
+# Autor:		Christoph Heer (Christoph.Heer@googlemail.com)
 
-<!-- top title -->
-<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" >
-<tr VALIGN=TOP BGCOLOR="#FFCC33">
-<td BGCOLOR="#FFFFFF"><a href="http://www.berlios.de/index.php.en"><img src="http://developer.berlios.de/images/berliOS_logo.png" ALT="BerliOS" HSPACE=5 VSPACE=5 BORDER=0 height=61 width=238></a></td>
-<td WIDTH="10" BGCOLOR="#FFCC33"><img SRC="http://developer.berlios.de/images/blank.gif" ALT="" BORDER=0 height=1 width=10></td>
-<td VALIGN=middle WIDTH="99%"><b><font size="+1">BerliOS</font></b>
-<br>The Open Source Mediator</td>
+version = '0.1'
+autor = 'Christoph Heer (Christoph.Heer@googlemail.com)'
+gesetze = ['Hebelgesetz','Flaschenzug Zugkraft', 'Flaschenzug Seilzug']
 
-<!-- logo at right -->
-<td VALIGN=middle>
-<a href="http://www.fokus.fraunhofer.de/" TARGET="_blank"><img SRC="http://developer.berlios.de/images/logo_fokus.png" ALT="FOKUS" HSPACE=10 BORDER=0 height=60 width=60 align=RIGHT></a></td>
-</tr>
-<!-- end logo at right -->
+def hebelgesetz(Fk=None, ak=None, Fl=None, al=None):
+	# Ueberpruefung ob es eine Variable gibt die errechnet werden soll
+	if Fk == None:
+		# Orginal Umgestellte Formel Kraft = Last * Lastarm / Kraftarm
+		Fk = 0
+		Fk = float(Fk)
+		Fl = float(Fl)
+		al = float(al)
+		ak = float(ak)
+		Fk = Fl * al / ak
+		return Fk
+	if ak == None:
 
-<tr>
-<td COLSPAN="4" BGCOLOR="#7B7B7B"><img SRC="http://developer.berlios.de/images/blank.gif" ALT="" height=2 width=2></td>
-</tr>
-</table>
-<!-- end top title -->
+		# Orginal Umgestellte Formel Kraftarm = Last * Lastarm / Kraftarm
+		ak = 0
+		Fk = float(Fk)
+		Fl = float(Fl)
+		al = float(al)
+		ak = float(ak)
+		ak = Fl * al / Fk
+		return ak
+	if Fl == None:
+		# Orginal Umgestellte Formel Last = Kraft * Kraftarm / Lastarm
+		Fl = 0
+		Fk = float(Fk)
+		Fl = float(Fl)
+		al = float(al)
+		ak = float(ak)
+		Fl = Fk * ak / al
+		return Fl
+	if al == None:
+		# Orginal Umgestellte Formel Lastarm = Kraft * Kraftarm / Last
+		al = 0
+		Fk = float(Fk)
+		Fl = float(Fl)
+		al = float(al)
+		ak = float(ak)
+		al = Fk * ak / Fl
+		return al
 
-<!-- content -->
-<p>
+def flaschenzug_zugkraft(Fz=None, n=None, Fl=None):
+	# Ueberpruefung ob es eine Variable gibt die errechnet werden soll
+	if Fz == None:
+		# Orginal Umgestellte Formel Kraft = 1 / Seile * Last
+		Fz = 0
+		Fz = float(Fz)
+		n = float(n)
+		Fl = float(Fl)
+		Fz = 1 / n * Fl
+		return Fz
+	if n == None:
+		# Orginal Umgestellte Formel Seile = Last / Kraft
+		n = 0
+		Fz = float(Fz)
+		n = float(n)
+		Fl = float(Fl)
+		n = Fl / Fk
+		return n
+	if Fl == None:
+		# Orginal Umgestellte Formel Last = Seile * Kraft
+		Fl = 0
+		Fz = float(Fz)
+		n = float(n)
+		Fl = float(Fl)
+		Fl = n * Fz
+		return Fl
 
-<center>
-<script type="text/javascript"><!--
-google_ad_client = "pub-4255082498533526";
-google_ad_width = 728;
-google_ad_height = 90;
-google_ad_format = "728x90_as";
-google_ad_type = "text_image";
-google_ad_channel ="";
-google_color_border = "CCCCCC";
-google_color_bg = "FFFFFF";
-google_color_link = "000000";
-google_color_url = "666666";
-google_color_text = "333333";
-//--></script>
-<script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</center><p align=center><b>Your are requesting file: /physikpy/physikpy-0.0.1.py<b></p>
-<p>
-<table ALIGN=center BORDER=1 CELLSPACING=0 CELLPADDING=5" >
-<tr>
-<th>Host</th>
-<th>Location</th>
-<th>Download</th>
-</tr>
-<tr>
-<td align="middle">download.berlios.de</td>
-<td align="middle">Berlin, Germany</td>
-<td align="middle"><a href="http://download.berlios.de/physikpy/physikpy-0.0.1.py">Download</a></td>
-</tr>
-<tr>
-<td align="middle">download2.berlios.de</td>
-<td align="middle">Berlin, Germany</td>
-<td align="middle"><a href="http://download2.berlios.de/physikpy/physikpy-0.0.1.py">Download</a></td>
-</tr>
-</table>
-<p>&nbsp;
-<!-- end content -->
+def flaschenzug_seilzug(sz=None, n=None, sl=None):
+	# Ueberpruefung ob es eine Variable gibt die errechnet werden soll
+	if sz == None:
+		# Orginal Umgestellte Formel GesamteSeillaenge = Anzahl * EinzelSeillaenge
+		sz = 0
+		sz = float(sz)
+		n = float(n)
+		sl = float(sl)
+		sz = n * sl
+		return sz
+	if n == None:
+		# Orginal Umgestellte Formel Anzahl = GesamteSeillaenge / EinzelSeillaenge
+		n = 0
+		sz = float(sz)
+		n = float(n)
+		sl = float(sl)
+		n = sz / sl
+		return n
+	if sl == None:
+		# Orginal Umgestellte Formel GesamteSeillaenge = EinzelSeillaenge / Anzahl
+		sl = 0
+		sz = float(sz)
+		n = float(n)
+		sl = float(sl)
+		sl = sz / n
+		return sl
 
-<!-- footer -->
-<table BORDER=0 CELLSPACING=0 CELLPADDING=2 WIDTH="100%" BGCOLOR="#7B7B7B" >
-<tr>
-<td ALIGN=CENTER><span class="titlebar"><font color="#FFFFFF">Copyright
-&copy;2000-2007 <a href="http://www.fokus.fraunhofer.de/" class="maintitlebar" TARGET="_blank">
-FOKUS</a></font></span></td>
-</tr>
-</table>
-<!-- end footer -->
-
-</body>
-</html>
