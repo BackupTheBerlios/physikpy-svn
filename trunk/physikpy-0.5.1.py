@@ -268,56 +268,56 @@ class optik:
     # 
     # Gegenstand (Größe G) <---g---> Linse <---b---> Bild (Größe B)
     
-    if f == '?' and g == '?' and b == '?' and G == '?' and B == '?':
-        print 'Fehler! Zu wenig Argumente'
-    elif f != '?' and g == '?' and b == '?' and G == '?' and B == '?':
-        print 'Fehler! Zu wenig Argumente'
-    elif f == '?' and g != '?' and b == '?' and G == '?' and B == '?':
-        print 'Fehler! Zu wenig Argumente'
-    elif f == '?' and g == '?' and b != '?' and G == '?' and B == '?':
-        print 'Fehler! Zu wenig Argumente'
-    elif f == '?' and g == '?' and b == '?' and G != '?' and B == '?':
-        print 'Fehler! Zu wenig Argumente'
-    elif f == '?' and g == '?' and b == '?' and G == '?' and B != '?':
-        print 'Fehler! Zu wenig Argumente'
-    elif f != '?' and g != '?' and b == '?' and G == '?' and B == '?':
-        b1 = 1.0/f-1.0/g
-        b = 1.0/b1
-    elif f != '?' and g == '?' and b != '?' and G == '?' and B == '?':
-        g1 = 1.0/f-1.0/b
-        g = 1.0/g1
-    elif f == '?' and g != '?' and b != '?' and G == '?' and B == '?':
-        f1 = 1.0/g+1.0/b
-        f = 1.0/f1
-    elif f == '?' and g != '?' and b != '?' and G != '?' and B == '?':
-        B = 1.0*b*G/g
-        f1 = 1.0/g+1.0/b
-        f = 1.0/f1
-    elif f == '?' and g != '?' and b != '?' and G == '?' and B != '?':
-        G = 1.0*g*B/b
-        f1 = 1/g+1/b
-        f = 1.0/f1
-    elif f != '?' and g == '?' and b != '?' and G != '?' and B == '?':
-        g1 = 1.0/f-1.0/g
-        g = 1.0/g1
-        B = 1.0*b*G/g
-    elif f != '?' and g == '?' and b != '?' and G == '?' and B != '?':
-        g1 = 1.0/f-1.0/g
-        g = 1.0/g1
-        G = 1.0*g*B/b
-    elif f != '?' and g != '?' and b == '?' and G != '?' and B == '?':
-        b1 = 1.0/f-1.0/g
-        b = 1.0/b1
-        B = 1.0*b*G/g
-    elif f != '?' and g != '?' and b == '?' and G == '?' and B != '?':
-        b1 = 1.0/f-1.0/g
-        b = 1.0/b1
-        G = 1.0*g*B/b
-    else:
-        print 'Fehler: \n Nicht beruecksichtigte Kombination von f,g,b,G,B!'
+        if f == '?' and g == '?' and b == '?' and G == '?' and B == '?':
+            print 'Fehler! Zu wenig Argumente'
+        elif f != '?' and g == '?' and b == '?' and G == '?' and B == '?':
+            print 'Fehler! Zu wenig Argumente'
+        elif f == '?' and g != '?' and b == '?' and G == '?' and B == '?':
+            print 'Fehler! Zu wenig Argumente'
+        elif f == '?' and g == '?' and b != '?' and G == '?' and B == '?':
+            print 'Fehler! Zu wenig Argumente'
+        elif f == '?' and g == '?' and b == '?' and G != '?' and B == '?':
+            print 'Fehler! Zu wenig Argumente'
+        elif f == '?' and g == '?' and b == '?' and G == '?' and B != '?':
+            print 'Fehler! Zu wenig Argumente'
+        elif f != '?' and g != '?' and b == '?' and G == '?' and B == '?':
+            b1 = 1.0/f-1.0/g
+            b = 1.0/b1
+        elif f != '?' and g == '?' and b != '?' and G == '?' and B == '?':
+            g1 = 1.0/f-1.0/b
+            g = 1.0/g1
+        elif f == '?' and g != '?' and b != '?' and G == '?' and B == '?':
+            f1 = 1.0/g+1.0/b
+            f = 1.0/f1
+        elif f == '?' and g != '?' and b != '?' and G != '?' and B == '?':
+            B = 1.0*b*G/g
+            f1 = 1.0/g+1.0/b
+            f = 1.0/f1
+        elif f == '?' and g != '?' and b != '?' and G == '?' and B != '?':
+            G = 1.0*g*B/b
+            f1 = 1/g+1/b
+            f = 1.0/f1
+        elif f != '?' and g == '?' and b != '?' and G != '?' and B == '?':
+            g1 = 1.0/f-1.0/g
+            g = 1.0/g1
+            B = 1.0*b*G/g
+        elif f != '?' and g == '?' and b != '?' and G == '?' and B != '?':
+            g1 = 1.0/f-1.0/g
+            g = 1.0/g1
+            G = 1.0*g*B/b
+        elif f != '?' and g != '?' and b == '?' and G != '?' and B == '?':
+            b1 = 1.0/f-1.0/g
+            b = 1.0/b1
+            B = 1.0*b*G/g
+        elif f != '?' and g != '?' and b == '?' and G == '?' and B != '?':
+            b1 = 1.0/f-1.0/g
+            b = 1.0/b1
+            G = 1.0*g*B/b
+        else:
+            print 'Fehler: \n Nicht beruecksichtigte Kombination von f,g,b,G,B!'
         
-    print 'Brennweite: %s \n Gegenstandsweite: %s \n Bildweite: %s \n Gegenstandsgroesse: %s \n Bildgroesse: %s' %(f,g,b,G,B)
-    print '\n\n Alle Angaben in [m]!'
+        print 'Brennweite: %s \n Gegenstandsweite: %s \n Bildweite: %s \n Gegenstandsgroesse: %s \n Bildgroesse: %s' %(f,g,b,G,B)
+        print '\n\n Alle Angaben in [m]!'
     
 class dynamik:
     def freierFall(endgeschw, strecke, fallzeit, startgeschw, beschl):
