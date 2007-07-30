@@ -1,0 +1,17 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tool Info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#|  Name:       Grundgesetze Reader                                       |#
+#|  Autor:      Christoph Heer (Christoph.Heer@googlemail.com)            |#
+#|  Version:    0.1                                                       |#
+#|  Datum:      30.07.2007                                                |#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Dieses Programm verarbeit das Dic aus der PhysikPy Class und
+gibt diese Formatiert aus.
+  --list                : Zeigt eine Fortmatierte Liste der Gesetze an
+  --list-text           : Zeigt eine nicht Fortmatierte List an
+  --name [name]         : Zeigt eine Fortmatierte Ausgabe der Formel
+                          mit dem angegebenen Namen
+  --name-text [name]    : Zeigt eine nicht Fortmatierte Ausgabe der
+                          Formel mit dem angegebenen Namen
+  --version             : Gibt die Versionsnummer aus
+  --hilfe               : Gibt diese Hilfe aus
