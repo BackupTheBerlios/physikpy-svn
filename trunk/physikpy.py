@@ -2,18 +2,18 @@
 r""" Ein Modul welches Physik Gesetze als Funktionen bereitstellt
 
 Dieses Modul soll Physik in Python integrieren um einfache aber
-dennoch efektive Funktionen für Physikalische Berechnungen
+dennoch efektive Funktionen fuer Physikalische Berechnungen
 bereitzustellen. Diese Gesetze sind in mehren Classes aufgeteilt
 die fuer ein Thema stehen um weiter Übersicht zu haben.
 
-Für weitere Formel oder Fragen wurde eine kleine Projekt Seite
+Fuer weitere Formel oder Fragen wurde eine kleine Projekt Seite
 auf dem Projekt Hosting BerliOS eingerichtet diese ist unter
 http://http://developer.berlios.de/projects/physikpy/
 erreichbar die Homepage zum Projekt ist unter
-physikpy.berlios.de zugänglich.
+physikpy.berlios.de zugaenglich.
 
-Achtung auf die Richtigkeit der Formeln und Erklärungen wird keine
-Gewehr gegeben. Die Entwickler würde sich über Verbesserungen oder
+Achtung auf die Richtigkeit der Formeln und Erklaerungen wird keine
+Gewehr gegeben. Die Entwickler wuerde sich ueber Verbesserungen oder
 Kritik sehr freuen.
 """
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Modul Info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -26,7 +26,7 @@ Kritik sehr freuen.
 from __future__ import division
 import math
 class physikpy:
-    # Allgemeine Infomationen über das Modul
+    # Allgemeine Infomationen ueber das Modul
     version = '0.5.1'
     relase = '28.07.2007'
     def info(self):
@@ -41,7 +41,7 @@ class physikpy:
     
     # Grundgesetze
     grundgesetze_dic = {
-        # Kräfte und ihre Wirkung
+        # Kraefte und ihre Wirkung
         'Gewichtskraft' : 'F = m * g',
         'Flaschenzug Seilzug' : 'sz = n * sl',
         'Flaschenzug Zugkraft' : 'Fz = 1 / n * Fl',
@@ -65,21 +65,21 @@ class physikpy:
         print "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#"
 
 class kraefte:
-    """Class Erklärung
+    """Class Erklaerung
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Die Einheit fur Physikalische Kraft ist N und gibt
-    an wie start zwei Körper aufeinander einwirken."""
+    an wie start zwei Koerper aufeinander einwirken."""
     def gewichtskraft(self, F, m, g=9.81):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        1N ist die Kraft die auf einem Körper wirkt der
+        1N ist die Kraft die auf einem Koerper wirkt der
         eine Masse von 100g hat und von der Erde an gezogen
         wird.
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         F = Wirkende Kraft
-        m = Masse des Körpers
+        m = Masse des Koerpers
         g = Ortsfaktor"""
         if F == '?':
 		F = m * g
@@ -92,16 +92,16 @@ class kraefte:
 		return g
 	    
     def flaschenzug_seilzug(self, sz, n, sl):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Der Seilzug vom Flaschenzug ist von den
-        einzelen Längen der Seile abhänig.
+        einzelen Laengen der Seile abhaenig.
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         sz = Gesamter Seilzug
         n = Anzahl von Seilen
-        sl = Einzelne Längen"""
+        sl = Einzelne Laengen"""
 	if sz == '?':
 		sz = n * sl
 		return sz
@@ -113,14 +113,14 @@ class kraefte:
 		return sl
 
     def flaschenzug_zugkraft(self, Fz, n, Fl):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Die Zugkraft ist von der Gewichtskraft
-        und der Anzahl der Zeilen abhänig. Um
+        und der Anzahl der Zeilen abhaenig. Um
         so mehr Seile um so weniger wird
         Zugkraft gebraucht
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Fz = Gesamte Zugkraft
         n = Anzahl von Seilen
@@ -136,20 +136,20 @@ class kraefte:
 		return Fl
 
     def hebel(self, F1, l1, F2, l2):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Der Hebel wird aus 4 Variablen berechnet F1,
         l1, F2, l2 die F Werte bezeichnen die Kraft
         auf einer Seite des Hebels. Die l Werte
-        beichnet die Arm Länge daraus kann man die
+        beichnet die Arm Laenge daraus kann man die
         einzelnen Werten berechnen.
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         F1 = Kraft auf Arm 1
-        l1 = Länge des Arm 1
+        l1 = Laenge des Arm 1
         F2 = Kraft auf Arm 2
-        l2 = Länge des Arm 2"""
+        l2 = Laenge des Arm 2"""
 	if F1 == '?':
 		F1 = F2 * l2 / l1
 		return F1
@@ -165,17 +165,17 @@ class kraefte:
 
 class arbeit:    
     def arbeit(self, W, F, s):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Die Mechanische Arbeit wird beim einwirken
-        einer Kraft ausgeübt z.B. beim Verformen oder
+        einer Kraft ausgeuebt z.B. beim Verformen oder
         bewegenen eines Gegenstandes.
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         W = Arbeit in Joule
         F = Die wirkende Kraft
-        s = Der Weg der zurückgelegt wird"""
+        s = Der Weg der zurueckgelegt wird"""
 	if W == '?':
 		W = F * s
 		return W
@@ -187,16 +187,16 @@ class arbeit:
 		return s
 
     def beschleunigungsarbeit(self, W, m, s, a):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Beim Beschleunigen eines Körpers wird
+        Beim Beschleunigen eines Koerpers wird
         Arbeit verrichtet.
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         W = Arbeit in Joule
-        m = Masse des Körpers
-        s = Der Weg der zurückgelegt wird
+        m = Masse des Koerpers
+        s = Der Weg der zurueckgelegt wird
         a = Die Geschwindigkeit"""
 	if W == '?':
 		W = m * a * s
@@ -212,16 +212,16 @@ class arbeit:
                 return a
 
     def hubarbeit(self, W, m, h, g=9.81):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Beim Heben eines Körpers wird auch Kraft
-        auf einen Körper angewendet.
+        Beim Heben eines Koerpers wird auch Kraft
+        auf einen Koerper angewendet.
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         W = Arbeit in Joule
-        m = Masse des Körpers
-        h = Höhe
+        m = Masse des Koerpers
+        h = Hoehe
         g = Ortsfaktor"""
         self.hubarbeit_W = W
         self.hubarbeit_m = m
@@ -241,16 +241,16 @@ class arbeit:
                 return h
             
     def verformungsarbeit(self, W, Fe, s):
-        """Funktions Erklärung
+        """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Wenn eine Feder verformt wird dann wird
         auf die Feder auch Kraft angewendet
 
-        Einheiten Erklärung
+        Einheiten Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         W = Arbeit in Joule
         Fe = Kraft die auf die Feder wirkt
-        s = Die Länge die hinzu kommt"""
+        s = Die Laenge die hinzu kommt"""
 	if W == '?':
 		W = 0.5 * Fe * s
 		return W
@@ -267,9 +267,9 @@ class optik:
         """f: Brennweite [m]
         g: Gegenstandsweite [m]
         b: Bildweite [m]
-        G: Gegenstandsgröße [m]
-        B: Bildgröße [m]
-        Gegenstand (Größe G) <---g---> Linse <---b---> Bild (Größe B)"""
+        G: Gegenstandsgroeße [m]
+        B: Bildgroeße [m]
+        Gegenstand (Groeße G) <---g---> Linse <---b---> Bild (Groeße B)"""
     
         if f == '?' and g == '?' and b == '?' and G == '?' and B == '?':
             print 'Fehler! Zu wenig Argumente'
@@ -328,9 +328,9 @@ class dynamik:
         Bisher kann man nur nach Endgescwindigkeit, Strecke und Fallzeit fragen.
         Eine Erweiterung ist in Arbeit.
         
-        Es werden die Folgenden Parameter benötigt:
+        Es werden die Folgenden Parameter benoetigt:
         endgeschw: Endgeschwindigkeit
-        strecke: zurückgelegte Strecke
+        strecke: zurueckgelegte Strecke
         fallzeit: Zeit der Beschleunigung
         startgeschw: Anfangsgeschwindigkeit
         beschl: Beschleunigung
@@ -342,7 +342,7 @@ class dynamik:
         velo = 0  #Geschwindigkeit
         velo0 = 0 #Anfangsgeschwindigkeit
         way = 0   #Weg
-        hight = 0 #Höhe
+        hight = 0 #Hoehe
         g = beschl #(Erd-)Beschleunigung
         
         velo0 = startgeschw
@@ -359,7 +359,7 @@ class dynamik:
             time = fallzeit
             velo = g*time + velo0
             way = g*time*time/2 + velo0*time
-        #Wenn man mehr als eine Größe angibt, muss die Beschleunigung neu berechnet werden, da sonst die Werte nich immer passen.
+        #Wenn man mehr als eine Groeße angibt, muss die Beschleunigung neu berechnet werden, da sonst die Werte nich immer passen.
         elif (endgeschw != 0 and strecke != 0 and fallzeit == 0):
             velo = endgeschw
             way = strecke
@@ -393,7 +393,7 @@ class konstanten:
     """Zusammenstellung wichtiger Naturkonstanten
     Beschreibung ist wie folgt zu lesen:
     Name der Konstante (Genauigkeit bezogen auf die letzte angegebene Ziffer) [Einheit]
-    Bei Ergänzungen bitte wie bisher Kommentieren."""
+    Bei Ergaenzungen bitte wie bisher Kommentieren."""
     def E(exp):
         return pow(10,exp)
     def __init__():
@@ -439,7 +439,7 @@ class vector:
         str  = '(%s , %s , %s)' % (self.x , self.y , self.z)
         return str
     def betrag(self):
-        #Gibt den Betrag zurück
+        #Gibt den Betrag zurueck
         return math.sqrt(self.x*self.x + self.y*self.y + self.z*self.z)
     def add(self, vec):
         #Addition eines 'vectors'
