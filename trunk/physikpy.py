@@ -46,11 +46,14 @@ class physikpy:
         'Flaschenzug Seilzug' : 'sz = n * sl',
         'Flaschenzug Zugkraft' : 'Fz = 1 / n * Fl',
         'Hebel' : 'F1 * l1 = F2 * l2',
-        #Arbeit
         'Arbeit' : 'W = F * s',
         'Beschreunigungsarbeit' : 'W = m * a * s',
         'Hubarbeit' : 'W = m * g * h',
-        'Verformungsarbeit' : 'W = 0.5 * Fe * s'
+        'Verformungsarbeit' : 'W = 0.5 * Fe * s',
+        'Wirkungsgrad' : 'n = en / E',
+        'Mechanische Leistung' : 'P = W / t',
+        'Druck' : 'p = F / a',
+        'Dichte' : 'p = m / V'
         }
     def grundgesetze(self):
         """Duch das Dic grundgesetze_dic wird eine anschauliche
@@ -162,8 +165,7 @@ class kraefte:
 	if l2 == '?':
 		l2 = F1 * l1 / F2
 		return l2
-
-class arbeit:    
+  
     def arbeit(self, W, F, s):
         """Funktions Erklaerung
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -260,6 +262,92 @@ class arbeit:
        	if s == '?':
                 s = W / 0.5 / Fe
                 return s
+            
+    def wirkungsgrad(self, n, En, E):
+        """Funktions Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Mit diesem Gesetz wird ermittelt welcher
+        Anteil der eingesetzten Energie in nutzbare
+        Energie umgewandelt wird.
+
+        Einheiten Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        n = Eta (Angabe meistens in Prozent)
+        En = nutzbare Energie
+        E = eingesetze Energie"""
+	if n == '?':
+		n = En / E
+		return n
+	if En == '?':
+		En = n * E
+		return En
+	if E == '?':
+		E = En / n
+		return E
+
+    def mechanische_leistung(self, P, w, t):
+        """Funktions Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Miter Leistung wird gezeigt wie viel mechanische
+        Arbeit in 1 sek verrichtet wird.
+
+        Einheiten Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        p = Watt
+        w = Mechanische Arbeit
+        Zeit = Benoetigte Zeit"""
+	if P == '?':
+		P = w / t
+		return P
+	if w == '?':
+		w = P * t
+		return w
+	if t == '?':
+		t = w / P
+		return t
+
+    def druck(self, p, F, A):
+        """Funktions Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Der Druck kennzeichnet den Zustand einer
+        Fluessigkeit oder eines Gases, der durch
+        Zusammenpressen entsteht.
+
+        Einheiten Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        p = Pascal (1Pa = !n/m2)
+        F = Kraft
+        A = Flaeche"""
+	if p == '?':
+		p = F / A
+		return p
+	if F == '?':
+		F = p * A
+		return F
+	if A == '?':
+		A = F / p
+		return A
+
+    def dichte(self, p, m, V):
+        """Funktions Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Die Dichte p gibt an, welche Masse m
+        (in g) 1cm3 eines Stoffes hat.
+
+        Einheiten Erklaerung
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        p = Dichte (1g/cm3)
+        m = Masse
+        V = Volumen"""
+	if p == '?':
+		p = m / V
+		return p
+	if m == '?':
+		m = p * V
+		return m
+	if V == '?':
+		V = m / p
+		return V
 
 class optik:
     
