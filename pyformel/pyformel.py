@@ -1,57 +1,59 @@
+r"""Eine Klasse fuer die Verwendung von .for Dateien
+
+Diese Klasse liest die .for Datei ein und stellt weitere
+Tools um die Datei zu verwendung oder zu Bearbeiten zur
+verfuegung.
+"""
 version = '0.1.0'
 
 class pyformel():
-    def __init__(self, forfile=None):
-        if forfile == None:
-            pyformel.forfile = forfile
-        
-        else:
-            pyformel.forfile = forfile
-            pyformel.f = file(pyformel.forfile, 'r')
-            pyformel.name = str(pyformel.f.readline())
-            pyformel.grundformel = str(pyformel.f.readline())
-            pyformel.var_anzahl = int(pyformel.f.readline())
-            self.wiederholungen = pyformel.var_anzahl + 1
-            for self.i in range(1, self.wiederholungen):
-                self.i = str(self.i)
-                self.var_name = str(pyformel.f.readline())
-                exec "pyformel.var" + self.i + " = " + self.var_name
-            for self.i in range(1, self.wiederholungen):
-                self.i = str(self.i)
-                self.for_name = str(pyformel.f.readline())
-                exec "pyformel.for" + self.i + " = " + self.for_name
-            pyformel.f.close()
-            del pyformel.f
-            del self.wiederholungen
-            del self.i
-            del self.for_name
-            del self.var_name
+    """Haupt Klasse von PyFormel"""
+    def __init__(self, forfile):
+        pyformel.forfile = forfile
+        pyformel.f = file(pyformel.forfile, 'r')
+        pyformel.id = int(pyformel.f.readline())
+        pyformel.name = str(pyformel.f.readline())
+        pyformel.version = str(pyformel.f.readline())
+        pyformel.grundformel = str(pyformel.f.readline())
+        pyformel.var_anzahl = int(pyformel.f.readline())
+        self.wiederholungen = pyformel.var_anzahl + 1
+        for self.i in range(1, self.wiederholungen):
+            self.i = str(self.i)
+            self.var_name = str(pyformel.f.readline())
+            exec "pyformel.var" + self.i + " = " + self.var_name
+        for self.i in range(1, self.wiederholungen):
+            self.i = str(self.i)
+            self.for_name = str(pyformel.f.readline())
+            exec "pyformel.for" + self.i + " = " + self.for_name
+        pyformel.beschreibung = str(pyformel.f.readline())
+        pyformel.wikilink = str(pyformel.f.readline())
+        pyformel.f.close()
+        del pyformel.f
+        del self.wiederholungen
+        del self.i
+        del self.for_name
+        del self.var_name
 
     def reader(self):
         '''Ein einfache Funktion um den Inhalt der vorher angegeben "for" Datei lesbar auszugeben'''
-        if pyformel.forfile == None:
-            print "~~~~~~~~~~~ Error ~~~~~~~~~~~"
-            print "Diese Instanz der Class"
-            print "PyFormel wurde ohne Angabe"
-            print "einer 'for' Datei ausgefuehrt"
-            print "deshalb kann diese Funktion"
-            print "nicht ausgefuehrt werden."
-            print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        else:
-            print "~~~~~~~~~~~~~~~~~~~~~~ Reader 0.2 ~~~~~~~~~~~~~~~~~~~~~~"
-            print "Name: " + pyformel.name,
-            print "Grundformel: " + pyformel.grundformel,
-            print "--------------------------------------------------------"
-            self.wiederholungen = pyformel.var_anzahl + 1
-            for self.i in range(1, self.wiederholungen):
-                self.i = str(self.i)
-                exec "print '|' + self.i + '| ' + pyformel.var" + self.i + " + '  (' + pyformel.for" + self.i + " + ')'"
-            print "--------------------------------------------------------"
-            print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-            del self.i
-            del self.wiederholungen
+        print "~~~~~~~~~~~~~~~~~~ For File Inhalt 0.2 ~~~~~~~~~~~~~~~~~"
+        print "Name: " + pyformel.name,
+        print "Grundformel: " + pyformel.grundformel,
+        print "Erstellt mit: " + pyformel.version,
+        print "Wikipedia Link: " + pyformel.wikilink,
+        print "Beschreibung: " + pyformel.beschreibung
+        print "--------------------------------------------------------"
+        self.wiederholungen = pyformel.var_anzahl + 1
+        for self.i in range(1, self.wiederholungen):
+            self.i = str(self.i)
+            exec "print '|' + self.i + '| ' + pyformel.var" + self.i + " + '  (' + pyformel.for" + self.i + " + ')'"
+        print "--------------------------------------------------------"
+        print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        del self.i
+        del self.wiederholungen
 
     def forcreator(self):
+        '''Dies ist ein kleiner Assistent der eine .for Datei erstellen kann.'''
         import sys
         print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ for Creator ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         filename = str(raw_input('Wie soll die Datei heissen: '))
@@ -85,6 +87,8 @@ class pyformel():
             exec "for_file.write(t1 + for" + i + " + t2)" 
 
     def for2py(self, pyfile=None):
+        '''Diese Funktion wird benutzt wenn man eine .for Datei zu einer funktionsfaehigen
+        Python Funktion umwandeln moechte.'''
         if pyformel.forfile == None:
             print "~~~~~~~~~~~ Error ~~~~~~~~~~~"
             print "Diese Instanz der Class"
