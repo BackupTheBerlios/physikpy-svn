@@ -34,23 +34,15 @@ class pyformel():
         del self.for_name
         del self.var_name
 
-    def for2py(self, pyfile=None):
+    def for2py(self, pyfile):
         '''Diese Funktion wird benutzt wenn man eine .for Datei zu einer funktionsfaehigen
         Python Funktion umwandeln moechte.'''
         if pyformel.forfile == None:
-            print "~~~~~~~~~~~ Error ~~~~~~~~~~~"
-            print "Diese Instanz der Class"
-            print "PyFormel wurde ohne Angabe"
-            print "einer 'for' Datei ausgefuehrt"
-            print "deshalb kann diese Funktion"
-            print "nicht ausgefuehrt werden."
-            print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            return "ERROR: Class wurde nicht richtig initalisiert"
         elif pyfile == None:
-            print "~~~~~~~~~~~ Error ~~~~~~~~~~~"
-            print "Es wurde keine 'py' Datei als"
-            print "Ziel angeben"
-            print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            return "ERROR: Funktion wurde ohne Py File Angabe gestartet"
         else:
+            status = 'Fehler'
             funk_start = "def calko("
             wiederholungen = pyformel.var_anzahl
             for i in range(1, wiederholungen):
@@ -85,6 +77,8 @@ class pyformel():
                 exec "newfile.write(zeile" + i + "_1)"
                 exec "newfile.write(zeile" + i + "_2)"
                 exec "newfile.write(zeile" + i + "_3)"
+            newfile.write("#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~# \n")
+            newfile.write("# powerd by physikpy.berlios.de \n")
             newfile.write("#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~# \n")
             status = 'Erfolg'
             return status
