@@ -5,6 +5,7 @@ Tools um die Datei zu verwendung oder zu Bearbeiten zur
 verfuegung.
 """
 version = '0.1.0'
+version_unix = 010
 
 class pyformel():
     """Haupt Klasse von PyFormel"""
