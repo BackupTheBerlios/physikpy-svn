@@ -7,11 +7,11 @@
 
 Dieses Programm verarbeit das Dic aus der PhysikPy Class und
 gibt diese Formatiert aus.
-  --list                : Zeigt eine Fortmatierte Liste der Gesetze an
-  --list-text           : Zeigt eine nicht Fortmatierte List an
-  --name [name]         : Zeigt eine Fortmatierte Ausgabe der Formel
+  --list                : Zeigt eine formatierte Liste der Gesetze an
+  --list-text           : Zeigt eine nicht formatierte Liste an
+  --name [name]         : Zeigt eine formatierte Ausgabe der Formel
                           mit dem angegebenen Namen
-  --name-text [name]    : Zeigt eine nicht Fortmatierte Ausgabe der
+  --name-text [name]    : Zeigt eine nicht formatierte Ausgabe der
                           Formel mit dem angegebenen Namen
   --version             : Gibt die Versionsnummer aus
   --hilfe               : Gibt diese Hilfe aus
